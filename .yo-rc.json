@@ -1,0 +1,15 @@
+{
+  "generator-lb": {
+    "version": "4.0.1",
+    "name": "AE2017 UNICT RadiceMaya",
+    "features": [
+      "includeFEFramework",
+      "includeModernizr",
+      "includejQuery"
+    ],
+    "jQuery": "includejQuery3",
+    "feFramework": "includeBootstrap",
+    "multiLanguage": false,
+    "dataFormat": "yaml"
+  }
+}
