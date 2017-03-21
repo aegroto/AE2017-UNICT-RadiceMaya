@@ -1,7 +1,17 @@
 extends layouts/_default
 
 block content
-    .intro
+    //.container(style='width:100vw')
+    nav(class='navbar navbar-collapse navbar-default' /*style='background-color: rgb(230, 230, 230);'*/)
+        span(class='navbar-brand') Simulatore di Radice Quadrata in aritmetica Maya
+        ul(class='nav navbar-nav navbar-right')
+            li(class='nav-item active') 
+                a(href='#') Home
+            li(class='nav-item disabled') 
+                a(href='#help') Help
+
+    .container
         h1 AE2017 UNICT RadiceMaya - IL FORMALIZZATORE PAZZO È STATO QUI.
-    .canvas-container
+
+    .container.canvas-container
       canvas(id="grid_canvas") If you see this,your browser is not supporting HTML5 Canvas.

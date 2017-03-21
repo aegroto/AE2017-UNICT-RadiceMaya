@@ -19,26 +19,35 @@ const CANVAS = document.getElementById('grid_canvas');
 const CONTEXT = CANVAS.getContext('2d');
 
 function cx(x) {
-    return CANVAS.width * x;
+  return CANVAS.width * x;
 }
 
 function cy(y) {
-    return CANVAS.height * y;
+  return CANVAS.height * y;
 }
 
-function init() {
-  CANVAS.width = window.innerWidth * 0.9;
-  CANVAS.height = 300;
+function updateCanvasSize(canvas) {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
 
-  CONTEXT.beginPath();
-  CONTEXT.moveTo(0, 0);
-
-  drawLine(0.5, 0.5);
+  const canvasSize = width < height ? width * 0.6 : height * 0.6;
+  canvas.width = canvasSize; // window.innerWidth * 0.5;
+  canvas.height = canvasSize; // window.innerHeight * 0.5;
 }
 
 function drawLine(x, y) {
   CONTEXT.lineTo(cx(x), cy(y));
   CONTEXT.stroke();
+}
+
+function init() {
+  updateCanvasSize(CANVAS);
+  window.resize(updateCanvasSize(CANVAS));
+
+  CONTEXT.beginPath();
+  CONTEXT.moveTo(0, 0);
+
+  drawLine(0.5, 0.5);
 }
 
 init();
