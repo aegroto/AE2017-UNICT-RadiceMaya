@@ -14,7 +14,6 @@ import {} from './external/jquery';
 // import {} from 'bootstrap-sass/assets/javascripts/bootstrap/popover';
 // Or import everything
 import {} from 'bootstrap-sass'; // eslint-disable-line import/imports-first
-import { sayHello } from './modules/utils';
 
 const CANVAS = document.getElementById('grid_canvas');
 const CONTEXT = CANVAS.getContext('2d');
@@ -38,9 +37,8 @@ function init() {
 }
 
 function drawLine(x, y) {
-  CONTEXT.lineTo(cx(x), cy(x));
+  CONTEXT.lineTo(cx(x), cy(y));
   CONTEXT.stroke();
 }
 
 init();
-sayHello();

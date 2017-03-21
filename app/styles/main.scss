@@ -7,7 +7,7 @@ body {
 }
 
 .intro {
-  padding-top: .5vh;
+  padding-top: 5vh;
   font-family: 'Helvetica Neue', Helvetica;
   text-align: center;
   font-size: 0vmin;
@@ -27,27 +27,4 @@ body {
     #grid_canvas {
         border:solid .2vh rgb(0, 0, 0);
     }
-}
-
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-
-  background-color: rgb(235, 235, 235);
-  border-top: solid .2vh rgb(170, 170, 170);
-
-  .footer-container {
-    position: relative;
-
-    #authors {
-      margin: .5vw;
-      float: left;
-    }
-
-    #info {
-      margin: .5vw;
-      float: right;
-    }
-  }
 }
