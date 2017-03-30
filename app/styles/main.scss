@@ -7,11 +7,9 @@ body {
 }
 
 .intro {
-  padding-top: .5vh;
   font-family: 'Helvetica Neue', Helvetica;
   text-align: center;
-  font-size: 0vmin;
-
+  
   h1,
   h2,
   p {
@@ -20,34 +18,11 @@ body {
 }
 
 .canvas-container {
-    margin-right: 5vw;
-    margin-left: 5vw;
-    margin-top : 2.5vh;
+    margin-top: 2.5vh;
+    text-align: center;
+    //border: solid .2vh rgb(255, 0, 0);
 
     #grid_canvas {
         border:solid .2vh rgb(0, 0, 0);
     }
-}
-
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-
-  background-color: rgb(235, 235, 235);
-  border-top: solid .2vh rgb(170, 170, 170);
-
-  .footer-container {
-    position: relative;
-
-    #authors {
-      margin: .5vw;
-      float: left;
-    }
-
-    #info {
-      margin: .5vw;
-      float: right;
-    }
-  }
 }

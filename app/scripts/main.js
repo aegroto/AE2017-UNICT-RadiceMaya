@@ -26,14 +26,22 @@ import {
   drawTable,
 } from './modules/canvas';
 
+function updateCanvasSize(canvas) {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  const canvasSize = width < height ? width * 0.7 : height * 0.7;
+  canvas.width = canvasSize; // window.innerWidth * 0.5;
+  canvas.height = canvasSize; // window.innerHeight * 0.5;
+} 
+
 function init() {
-  CANVAS.width = window.innerWidth * 0.9;
-  CANVAS.height = 300;
+  updateCanvasSize(CANVAS);
+  // window.resize(updateCanvasSize(CANVAS));
 
   CONTEXT.beginPath();
   CONTEXT.moveTo(0, 0);
-
-  drawTable(10, 2);
+  drawTable(5, 1);
 }
 
 init();
