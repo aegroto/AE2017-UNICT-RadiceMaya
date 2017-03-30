@@ -19,11 +19,21 @@ export function drawLine(x, y) {
 }
 
 export function drawTable(rows, columns) {
-  const totalRows = rows + columns;
-  const size = 1.0 / totalRows;
+  const rowSize = 1.0 / rows;
+  const rowMargin = 0.025;
 
-  for (let row = 0; row < totalRows; row += 1) {
-    moveTo(0.0, row * size);
-    drawLine(row * size, 1.0);
+  for (let row = 1; row < rows; row += 1) {
+    const rowHeight = row * rowSize;
+    moveTo(rowMargin, rowHeight);
+    drawLine(1.0 - rowMargin, rowHeight);
+  }
+
+  const columnSize = 1.0 / columns;
+  const columnMargin = 0.025;
+
+  for (let column = 1; column < columns; column += 1) {
+    const columnWidth = column * columnSize;
+    moveTo(columnWidth, columnMargin);
+    drawLine(columnWidth, 1.0 - columnMargin);
   }
 }
