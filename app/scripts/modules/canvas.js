@@ -20,35 +20,43 @@ export function drawLine(x, y) {
 
 export function drawTable(rows, columns, drawDiagonals) {
   const rowSize = 1.0 / rows;
-  const rowMargin = 0.0;
+  const columnSize = 1.0 / columns;
 
   for (let row = 1; row < rows; row += 1) {
     const rowHeight = row * rowSize;
-    moveTo(rowMargin, rowHeight);
-    drawLine(1.0 - rowMargin, rowHeight);
+    const columnWidth = row * columnSize;
+
+    moveTo(0.0, rowHeight);
+    drawLine(1.0, rowHeight);
 
     if (drawDiagonals) {
-      moveTo(rowMargin, rowHeight);
-      drawLine(rowHeight, rowMargin);
+      moveTo(0.0, rowHeight);
+      drawLine(columnWidth, 0.0);
     }
   }
 
-  if (drawDiagonals) {
-    moveTo(0, 1.0);
-    drawLine(1.0, 0.0);
-  }
+  /* if (drawDiagonals) {
+    moveTo(0.0, 1.0);
+    if (rows < columns) {
+      drawLine(1.0 - (columnSize * (columns - rows - 1)), 0.0);
+    } else if (rows > columns) {
+      drawLine(1.0, rowSize * (rows - columns - 1));
+    } else {
+      drawLine(1.0, 0.0);
+    }
+  } */
 
-  const columnSize = 1.0 / columns;
-  const columnMargin = 0.0;
 
   for (let column = 1; column < columns; column += 1) {
+    const rowHeight = (column) * rowSize;
     const columnWidth = column * columnSize;
-    moveTo(columnWidth, columnMargin);
-    drawLine(columnWidth, 1.0 - columnMargin);
+
+    moveTo(columnWidth, 0.0);
+    drawLine(columnWidth, 1.0);
 
     if (drawDiagonals) {
-      moveTo(columnWidth, 1.0 - columnMargin);
-      drawLine(1.0 - columnMargin, columnWidth);
+      moveTo(1.0 - columnWidth, 1.0 - rowSize);
+      drawLine(1.0, 1.0 - rowHeight - rowSize);
     }
   }
 }

@@ -30,9 +30,9 @@ function updateCanvasSize(canvas) {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
-  const canvasSize = width < height ? width * 0.5 : height * 0.5;
-  canvas.width = canvasSize; // window.innerWidth * 0.5;
-  canvas.height = canvasSize; // window.innerHeight * 0.5;
+  // const canvasSize = width < height ? width * 0.5 : height * 0.5;
+  canvas.width = width * 0.5;
+  canvas.height = height * 0.5;
 }
 
 function init() {
@@ -41,7 +41,7 @@ function init() {
 
   CONTEXT.beginPath();
   CONTEXT.moveTo(0, 0);
-  drawTable(4, 4, true);
+  drawTable(3, 3, true);
 }
 
 init();
