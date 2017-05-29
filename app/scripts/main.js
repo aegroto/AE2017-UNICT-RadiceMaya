@@ -1,4 +1,4 @@
-// import {} from './external/jquery';
+import { } from './external/jquery';
 // Import only bootstrap packages you need
 // import {} from 'bootstrap-sass/assets/javascripts/bootstrap/affix';
 // import {} from 'bootstrap-sass/assets/javascripts/bootstrap/alert';
@@ -26,6 +26,11 @@ import {
   drawTable,
 } from './modules/canvas';
 
+import {
+  elaborate,
+  calculateSquareLength,
+} from './modules/calculus';
+
 function updateCanvasSize(canvas) {
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -35,13 +40,33 @@ function updateCanvasSize(canvas) {
   canvas.height = height * 0.5;
 }
 
+/* function elaborateInput() {
+  const input = $('#input_textfield').val();
+
+  CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
+  drawTable(3, calculateSquareLength(input), true);
+
+  elaborate(input);
+} */
+
+const elaborateInput = function elaborateInput() {
+  const input = $('#input_textfield').val();
+
+  drawTable(3, calculateSquareLength(input), true);
+
+  elaborate(input);
+};
+
 function init() {
   updateCanvasSize(CANVAS);
   // window.resize(updateCanvasSize(CANVAS));
 
   CONTEXT.beginPath();
   CONTEXT.moveTo(0, 0);
+
   drawTable(3, 3, true);
+
+  $('#input_button').click(elaborateInput);
 }
 
 init();
