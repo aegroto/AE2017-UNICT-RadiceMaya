@@ -1,6 +1,8 @@
 export const CANVAS = document.getElementById('grid_canvas');
 export const CONTEXT = CANVAS.getContext('2d');
 
+let ROWS;
+let COLUMNS;
 let ROW_SIZE;
 let COLUMN_SIZE;
 
@@ -21,18 +23,52 @@ export function drawLine(x, y) {
   CONTEXT.stroke();
 }
 
-/* export function setNumberOnRow(row, number) {
+function drawDigit(row, digit, value) {
+  const img = new Image();
+  img.src = `images/${value}.png`;
 
-} */
+  moveTo(0.0, 0.0);
+
+  const imgX = cx(1.0 - COLUMN_SIZE / 2.5) - (digit * cx(COLUMN_SIZE / 2.0));
+  const imgY = row * cy(ROW_SIZE) + cy(0.1 + 0.005 * (COLUMNS)) - (cy(0.1) * (digit % 2));
+  let imgSize = 0;
+
+  if (ROWS > COLUMNS) {
+    imgSize = cy(ROW_SIZE / 1.5);
+  } else {
+    imgSize = cx(COLUMN_SIZE / 2.5);
+  }
+
+  img.onload = function load() {
+    CONTEXT.drawImage(this, imgX, imgY, imgSize, imgSize);
+  };
+}
+
+export function setNumberOnRow(row, number) {
+  // const size = number.toString().length;
+
+  let i = 0;
+  do {
+    drawDigit(row, i++, number % 10);
+    number = Math.floor(number / 10);
+  } while (number > 0);
+
+  /* for (let i = 1; i <= size; i++) {
+    drawDigit(row, i - 1, number % (i * 10));
+  } */
+}
 
 export function drawTable(rows, columns, drawDiagonals) {
+  ROWS = rows;
+  COLUMNS = columns;
+
   ROW_SIZE = 1.0 / rows;
   COLUMN_SIZE = 1.0 / columns;
 
   CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
   CONTEXT.beginPath();
 
-  for (let row = 1; row < rows; row += 1) {
+  for (let row = 1; row < rows; row++) {
     const rowHeight = row * ROW_SIZE;
     const columnWidth = row * COLUMN_SIZE;
 

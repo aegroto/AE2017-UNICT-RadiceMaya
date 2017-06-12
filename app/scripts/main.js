@@ -24,6 +24,7 @@ import {
 
   // Functions
   drawTable,
+  setNumberOnRow, // TEMP
 } from './modules/canvas';
 
 import {
@@ -36,23 +37,18 @@ function updateCanvasSize(canvas) {
   const height = window.innerHeight;
 
   // const canvasSize = width < height ? width * 0.5 : height * 0.5;
-  canvas.width = width * 0.5;
-  canvas.height = height * 0.5;
+  canvas.width = width * 0.6;
+  canvas.height = height * 0.6;
 }
-
-/* function elaborateInput() {
-  const input = $('#input_textfield').val();
-
-  CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
-  drawTable(3, calculateSquareLength(input), true);
-
-  elaborate(input);
-} */
 
 const elaborateInput = function elaborateInput() {
   const input = $('#input_textfield').val();
 
   drawTable(3, calculateSquareLength(input), true);
+
+  setNumberOnRow(0, input);
+  setNumberOnRow(1, input / 10);
+  setNumberOnRow(2, input / 20);
 
   elaborate(input);
 };
