@@ -3,30 +3,46 @@ $icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/_bootstrap";
 
 body {
-  font-family: 'Helvetica Neue', Helvetica;
+    font-family: 'Helvetica Neue', Helvetica;
+}
+
+#footer {
+  margin-bottom: 0px;
 }
 
 .intro {
-  font-family: 'Helvetica Neue', Helvetica;
-  text-align: center;
-  
-  h1,
-  h2,
-  p {
-    color: rgb(10, 10, 10);
-  }
+    font-family: 'Helvetica Neue', Helvetica;
+    text-align: center;
+    
+    h1,
+    h2,
+    p {
+        color: rgb(10, 10, 10);
+    }
 }
 
 .input-form {
-  margin-bottom: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+.operations-form {
+    margin-top: 2.5vh;
+    margin-bottom: 1vh;
 }
 
 .canvas-container {
     margin-top: 2.5vh;
     text-align: center;
-    // border: solid .2vh rgb(255, 0, 0);
+}
 
-    // #grid_canvas {
-        // border:solid .2vh rgb(0, 0, 0);
-    // }
+.error-text {
+    display: block;
+    margin-bottom: 1em;
+
+    color: #DD0000;
+}
+
+.info-text {
+  display: block;
+  margin: 1em;
 }

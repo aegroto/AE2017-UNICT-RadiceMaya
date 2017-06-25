@@ -19,50 +19,38 @@ import { } from './external/jquery';
  * CANVAS IMPORTS
  */
 import {
-  // Constants
-  CANVAS, CONTEXT,
+    // Constants
+    CANVAS, CONTEXT,
 
-  // Functions
-  drawTable,
-  setNumberOnRow, // TEMP
+    // Functions
+    drawTable,
 } from './modules/canvas';
 
 import {
-  elaborate,
-  calculateSquareLength,
-} from './modules/calculus';
+    nextStep,
+    previousStep,
+    elaborateInput,
+} from './modules/graphics_engine';
 
 function updateCanvasSize(canvas) {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
-  // const canvasSize = width < height ? width * 0.5 : height * 0.5;
-  canvas.width = width * 0.6;
-  canvas.height = height * 0.6;
+    canvas.width = width * 0.6;
+    canvas.height = height * 0.6;
 }
 
-const elaborateInput = function elaborateInput() {
-  const input = $('#input_textfield').val();
-
-  drawTable(3, calculateSquareLength(input), true);
-
-  setNumberOnRow(0, input);
-  setNumberOnRow(1, input / 10);
-  setNumberOnRow(2, input / 20);
-
-  elaborate(input);
-};
-
 function init() {
-  updateCanvasSize(CANVAS);
-  // window.resize(updateCanvasSize(CANVAS));
+    updateCanvasSize(CANVAS);
 
-  CONTEXT.beginPath();
-  CONTEXT.moveTo(0, 0);
+    CONTEXT.beginPath();
+    CONTEXT.moveTo(0, 0);
 
-  drawTable(3, 3, true);
+    drawTable(3, 3, true);
 
-  $('#input_button').click(elaborateInput);
+    $('#input_button').click(elaborateInput);
+    $('#next_step_button').click(nextStep);
+    $('#previous_step_button').click(previousStep);
 }
 
 init();
