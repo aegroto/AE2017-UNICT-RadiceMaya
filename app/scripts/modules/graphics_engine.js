@@ -60,7 +60,7 @@ export const elaborateInput = function elaborateInput() {
 };
 
 function drawTableOnStep(step) {
-    setInfoText(`Step ${step} su ${STEPS.length + 1}`);
+    setInfoText(`Step ${step} su ${STEPS.length}`);
     const stepData = STEPS[step];
 
     console.log(stepData);

@@ -35,9 +35,9 @@ function drawDigit(row, digit, value) {
 
     if (ROWS > COLUMNS) {
         imgY += cy(0.0175);
-        imgSize = cy(ROW_SIZE / 1.5);
+        imgSize = cy(ROW_SIZE / 3);
     } else {
-        imgSize = cx(COLUMN_SIZE / 3.5);
+        imgSize = cx(COLUMN_SIZE / 4.5);
     }
 
     img.onload = function load() {

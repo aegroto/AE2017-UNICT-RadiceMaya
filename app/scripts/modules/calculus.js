@@ -21,14 +21,14 @@ export function calculateStepsOnNumber(num) {
         stepData.thirdRow = square;
         stepArray.push(stepData);
 
-        while (num > partial) {
+        while (num >= partial) {
             num -= partial;
             square += Math.pow(10, i);
+            partial += 2 * Math.pow(10, 2 * i);
             stepData.firstRow = num;
             stepData.secondRow = partial;
             stepData.thirdRow = square;
             stepArray.push(stepData);
-            partial += 2 * Math.pow(10, 2 * i);
         }
     }
 
