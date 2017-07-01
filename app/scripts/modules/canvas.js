@@ -47,6 +47,7 @@ function drawDigit(row, digit, value) {
 
 export function clearRow(row, currentNumber) {
     let i = 0;
+
     do {
         drawDigit(row, i++, `clear_${currentNumber % 10}`);
         currentNumber = Math.floor(currentNumber / 10);
@@ -55,10 +56,48 @@ export function clearRow(row, currentNumber) {
 
 export function setNumberOnRow(row, number) {
     let i = 0;
+
     do {
         drawDigit(row, i++, number % 10);
         number = Math.floor(number / 10);
     } while (number > 0);
+}
+
+function drawDigitLinearly(row, digit, value) {
+    const img = new Image();
+    img.src = `images/${value}.png`;
+
+    moveTo(0.0, 0.0);
+
+    const imgX = cx(1.0 - (COLUMN_SIZE / 2.0 * (digit * 2 + 1)));
+    const imgY = cy(ROW_SIZE / 2.0 * (row * 2 + 1));
+    let imgSize = 0;
+
+    if (ROWS > COLUMNS) {
+        imgSize = cy(ROW_SIZE / 3);
+    } else {
+        imgSize = cx(COLUMN_SIZE / 4.5);
+    }
+
+    img.onload = function load() {
+        CONTEXT.drawImage(this, imgX - imgSize / 2.0, imgY - imgSize / 2.0, imgSize, imgSize);
+    };
+}
+
+export function setNumberOnRowLinearly(row, number) {
+    let i = 0;
+    do {
+        drawDigitLinearly(row, i++, number % 10);
+        number = Math.floor(number / 10);
+    } while (number > 0);
+}
+
+export function clearRowLinearly(row, currentNumber) {
+    let i = 0;
+    do {
+        drawDigitLinearly(row, i++, `clear_${currentNumber % 10}`);
+        currentNumber = Math.floor(currentNumber / 10);
+    } while (currentNumber > 0);
 }
 
 export function drawTable(rows, columns, drawDiagonals) {

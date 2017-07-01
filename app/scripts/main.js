@@ -24,6 +24,8 @@ import {
 
     // Functions
     drawTable,
+    setNumberOnRow,
+    clearRow,
 } from './modules/canvas';
 
 import {
@@ -47,6 +49,10 @@ function init() {
     CONTEXT.moveTo(0, 0);
 
     drawTable(3, 3, true);
+    setNumberOnRow(0, 12345);
+    setNumberOnRow(1, 67890);
+    clearRow(2, 12345); // PRELOADS
+    clearRow(2, 67890); // CLEAR MASKS
 
     $('#input_button').click(elaborateInput);
     $('#next_step_button').click(nextStep);

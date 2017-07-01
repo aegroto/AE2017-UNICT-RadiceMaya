@@ -6,7 +6,9 @@ import {
 import {
     drawTable,
     clearRow,
+    clearRowLinearly,
     setNumberOnRow,
+    setNumberOnRowLinearly,
 } from './canvas';
 
 import {
@@ -18,6 +20,47 @@ let INPUT = 0;
 
 let STEPS = {};
 let CURRENT_STEP = 0;
+
+function drawTableOnStep(step) {
+    setInfoText(`Calcolo la radice quadrata di ${INPUT}... Step ${step + 1} su ${STEPS.length}`);
+    const stepData = STEPS[step];
+
+    // console.log(stepData);
+
+    setNumberOnRow(0, stepData.firstRow);
+    setNumberOnRow(1, stepData.secondRow);
+    setNumberOnRowLinearly(2, stepData.thirdRow);
+}
+
+function clearTableOnStep(step) {
+    if (step >= 0) {
+        const stepData = STEPS[step];
+
+        clearRow(0, stepData.firstRow);
+        clearRow(1, stepData.secondRow);
+        clearRowLinearly(2, stepData.thirdRow);
+    } /* else {
+        clearRow(0, INPUT);
+    } */
+}
+
+export const nextStep = function nextStep() {
+    if (CURRENT_STEP < STEPS.length - 1) {
+        clearTableOnStep(CURRENT_STEP);
+        drawTableOnStep(++CURRENT_STEP);
+    }
+
+    if (CURRENT_STEP + 1 === STEPS.length) {
+        setInfoText(`Terminato! il risultato è ${STEPS[CURRENT_STEP].thirdRow}, resto: ${STEPS[CURRENT_STEP].firstRow}`);
+    }
+};
+
+export const previousStep = function previousStep() {
+    if (CURRENT_STEP > 0) {
+        clearTableOnStep(CURRENT_STEP);
+        drawTableOnStep(--CURRENT_STEP);
+    }
+};
 
 export const elaborateInput = function elaborateInput() {
     INPUT = $('#input_textfield').val();
@@ -53,9 +96,7 @@ export const elaborateInput = function elaborateInput() {
 
     drawTable(3, calculateSquareLength(INPUT), true);
 
-    setNumberOnRow(0, INPUT);
-
-    setInfoText(`Calcolo la radice quadrata di ${INPUT}`);
+    // setNumberOnRow(0, INPUT);
 
     STEPS = calculateStepsOnNumber(INPUT);
 
@@ -64,44 +105,7 @@ export const elaborateInput = function elaborateInput() {
         console.log(`${i} = ${STEPS[i].firstRow}, ${STEPS[i].secondRow}, ${STEPS[i].thirdRow}`);
     } */
 
-    CURRENT_STEP = 0;
-};
+    CURRENT_STEP = -1;
 
-function drawTableOnStep(step) {
-    setInfoText(`Step ${step} su ${STEPS.length}`);
-    const stepData = STEPS[step];
-
-    // console.log(stepData);
-
-    setNumberOnRow(0, stepData.firstRow);
-    setNumberOnRow(1, stepData.secondRow);
-    setNumberOnRow(2, stepData.thirdRow);
-}
-
-function clearTableOnStep(step) {
-    if (step >= 0) {
-        const stepData = STEPS[step];
-
-        clearRow(0, stepData.firstRow);
-        clearRow(1, stepData.secondRow);
-        clearRow(2, stepData.thirdRow);
-    } /* else {
-        clearRow(0, INPUT);
-    } */
-}
-
-export const nextStep = function nextStep() {
-    if (CURRENT_STEP < STEPS.length - 1) {
-        clearTableOnStep(CURRENT_STEP);
-        drawTableOnStep(++CURRENT_STEP);
-    } else {
-        setInfoText(`Terminato! il risultato è ${STEPS[CURRENT_STEP].thirdRow}, resto: ${STEPS[CURRENT_STEP].firstRow}`);
-    }
-};
-
-export const previousStep = function previousStep() {
-    if (CURRENT_STEP > 1) {
-        clearTableOnStep(CURRENT_STEP);
-        drawTableOnStep(--CURRENT_STEP);
-    }
+    nextStep();
 };
