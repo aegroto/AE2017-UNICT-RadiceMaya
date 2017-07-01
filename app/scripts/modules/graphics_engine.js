@@ -23,18 +23,21 @@ export const elaborateInput = function elaborateInput() {
     INPUT = $('#input_textfield').val();
 
     let irregularInput = false;
-    if (INPUT === '0') {
-      INPUT = 4;
+    if (isNaN(INPUT)) {
+        setErrorText("L'input non è un numero e per tanto non esiste la sua radice quadrata.");
+        return;
+    } if (INPUT === '0') {
+        INPUT = 4;
 
-      irregularInput = true;
-      setErrorText("L'input era nullo e per tanto i risultati potrebbero non essere quelli previsti.");
+        setErrorText("L'input è nullo (metti l'algoritmo alla prova con qualcosa di più complesso...)");
+        return;
     }
 
     if (INPUT < 0) {
         INPUT = -INPUT;
 
-        irregularInput = true;
-        setErrorText("L'input era un numero negativo e per tanto i risultati potrebbero non essere quelli previsti.");
+        setErrorText("L'input è un numero negativo e per tanto non esiste una sua radice quadrata intera.");
+        return;
     }
 
     if (Math.abs(INPUT) > Number.MAX_SAFE_INTEGER) {
@@ -56,14 +59,19 @@ export const elaborateInput = function elaborateInput() {
 
     STEPS = calculateStepsOnNumber(INPUT);
 
-    CURRENT_STEP = -1;
+    /* console.log('Steps: ');
+    for (let i = 0; i < STEPS.length; i++) {
+        console.log(`${i} = ${STEPS[i].firstRow}, ${STEPS[i].secondRow}, ${STEPS[i].thirdRow}`);
+    } */
+
+    CURRENT_STEP = 0;
 };
 
 function drawTableOnStep(step) {
     setInfoText(`Step ${step} su ${STEPS.length}`);
     const stepData = STEPS[step];
 
-    console.log(stepData);
+    // console.log(stepData);
 
     setNumberOnRow(0, stepData.firstRow);
     setNumberOnRow(1, stepData.secondRow);
@@ -71,15 +79,15 @@ function drawTableOnStep(step) {
 }
 
 function clearTableOnStep(step) {
-    if (step > -1) {
+    if (step >= 0) {
         const stepData = STEPS[step];
 
         clearRow(0, stepData.firstRow);
         clearRow(1, stepData.secondRow);
         clearRow(2, stepData.thirdRow);
-    } else {
+    } /* else {
         clearRow(0, INPUT);
-    }
+    } */
 }
 
 export const nextStep = function nextStep() {
@@ -92,7 +100,7 @@ export const nextStep = function nextStep() {
 };
 
 export const previousStep = function previousStep() {
-    if (CURRENT_STEP > 0) {
+    if (CURRENT_STEP > 1) {
         clearTableOnStep(CURRENT_STEP);
         drawTableOnStep(--CURRENT_STEP);
     }

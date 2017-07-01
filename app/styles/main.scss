@@ -6,8 +6,24 @@ body {
     font-family: 'Helvetica Neue', Helvetica;
 }
 
+main {  
+    min-height: 95vh;
+
+    background: url('../images/background/background.png');
+    background-size: 100% 100%;
+    background-color: #a9a9a9; 
+}
+
 #footer {
-  margin-bottom: 0px;
+    min-height: 5vh;
+    margin-bottom: 0px;
+}
+
+#grid_canvas {
+    // border: .1em black solid;
+    box-shadow: 0px 0px .5em #ffffff,
+                0px 0px .5em #ffffff,
+                0px 0px 2em #a9a9a9;
 }
 
 .intro {
@@ -39,10 +55,24 @@ body {
     display: block;
     margin-bottom: 1em;
 
-    color: #DD0000;
+    color: #FF0000;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: 0px 0px 2px #000000,
+                 0px 0px 2px #000000,
+                 -1px -1px 1px #FF0000, 
+                 -1px 1px 1px #FF0000, 
+                 1px -1px 1px #FF0000, 
+                 1px 1px 1px #FF0000, 
 }
 
 .info-text {
-  display: block;
-  margin: 1em;
+    display: block;
+    margin: 1em;
+
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: -1px -1px 2px #000000, 
+                 1px 1px 2px #000000, 
 }

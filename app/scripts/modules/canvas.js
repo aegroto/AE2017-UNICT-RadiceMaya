@@ -68,8 +68,11 @@ export function drawTable(rows, columns, drawDiagonals) {
     ROW_SIZE = 1.0 / rows;
     COLUMN_SIZE = 1.0 / columns;
 
-    CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
+    CONTEXT.fillStyle = '#FFFFFF';
+    CONTEXT.fillRect(0, 0, CANVAS.width, CANVAS.height);
     CONTEXT.beginPath();
+
+    CONTEXT.fillStyle = '#000';
 
     for (let row = 1; row < rows; row++) {
         const rowHeight = row * ROW_SIZE;
