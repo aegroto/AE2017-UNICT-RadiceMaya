@@ -95,7 +95,7 @@ export const nextStep = function nextStep() {
         clearTableOnStep(CURRENT_STEP);
         drawTableOnStep(++CURRENT_STEP);
     } else {
-        setInfoText(`Terminato! il risultato è ${STEPS[CURRENT_STEP].thirdRow}`);
+        setInfoText(`Terminato! il risultato è ${STEPS[CURRENT_STEP].thirdRow}, resto: ${STEPS[CURRENT_STEP].firstRow}`);
     }
 };
 
