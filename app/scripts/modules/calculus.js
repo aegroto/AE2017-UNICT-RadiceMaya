@@ -21,7 +21,7 @@ export function calculateStepsOnNumber(num) {
         tempStepData.firstRow = num;
         tempStepData.secondRow = partial;
         tempStepData.thirdRow = square;
-        stepArray.push(tempStepData);
+        stepArray.push(new StepData(tempStepData.firstRow, tempStepData.secondRow, tempStepData.thirdRow));
 
         while (num >= partial) {
             num -= partial;
