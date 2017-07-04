@@ -1,0 +1,9 @@
+body, table, td, th, div, pre, span, p, ol, ul, dl, dt, dd, li, blockquote {
+    background-color: #e3f6fb;
+    font-family: Georgia, "Times New Roman", serif;
+	line-height: 17px;
+}
+
+p {
+	width:95%;
+}

@@ -1,0 +1,11 @@
+﻿Guida all'uso del simulatore _Product Name_, versione _v.n_ 
+
+  Queste note vanno pensate per chi voglia usare il programma, senza 
+dover necessariamente guardare il codice per questo. Può essere utile 
+organizzare il documento per classi di funzionalità, ad es. per come 
+si raggruppano in diversi menu a discesa, entrando successivamente nel 
+dettaglio di singole voci di ciascun menu. L'informazione più astratta 
+dovrebbe esser data all'inizio: un sintetico riassunto delle funzioni 
+simulate dal software, e di eventuali diverse modalità  di simulazione 
+(ad es., automatica, passo passo, esercitazione ecc.) 
+

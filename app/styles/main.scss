@@ -11,7 +11,19 @@ body {
 }
 
 main {  
-    min-height: 95vh;
+    min-height: 90vh;
+}
+
+a {
+    text-shadow: -1px -1px .5px #000, 
+                 1px 1px .5px #000;
+
+    color: #40cfcf;
+    font-weight: bold;
+}
+
+a:hover { 
+    @extend a; 
 }
 
 #footer {
@@ -31,7 +43,10 @@ main {
 
     font-weight: bold;
     a {
-        color: #1414d9;
+        text-shadow: -1px -1px 2px #000, 
+                     1px 1px 2px #000;
+
+        color: #40efef;
     }
 }
 
@@ -70,6 +85,12 @@ main {
 .canvas-container {
     margin-top: 2.5vh;
     text-align: center;
+}
+
+.help-container {
+    color: white;
+    text-shadow: -1px -1px 2px #000000, 
+                 1px 1px 2px #000000, 
 }
 
 .error-text {

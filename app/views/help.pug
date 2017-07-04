@@ -1,0 +1,21 @@
+extends layouts/_default
+
+block content
+    .container.help-container
+        h1 Introduzione all'uso
+        | Il funzionamento del simulatore è estremamente semplice. Dopo l'inserimento e l'invio dell'input l'applicazione computerà in background
+        | tutti i passi necessari al calcolo della radice quadrata del numero dato. Successivamente l'utente avrà la possibilità di 'navigare'
+        | avanti e indietro fra i passi della procedura, dalla prima approssimazione fino al risultato. Riassumendo, le funzioni dei bottoni presenti sono:
+
+        h4(style='font-weight: bold; margin-top: 1.5em;') Calcola:
+        p Elabora il numero dato in input in background. Rende disponibili i vari passi del procedimento per la visualizzazione su abaco.
+
+        h4(style='font-weight: bold; margin-top: 1.5em;') Indietro:
+        p Visualizza il passo precedente. Si ferma al primo passo del procedimento.
+
+        h4(style='font-weight: bold; margin-top: 1.5em;') Prossimo passo:
+        p Visualizza il passo successivo. Si ferma all'ultimo passo del procedimento, dove nell'ultima riga verrà mostrato il risultato e nella prima il resto dell'operazione.
+
+        h1 Note di sviluppo
+        | Le note di sviluppo e i potenziali miglioramenti da applicare al progetto sono discussi in un'apposita pagina in lingua inglese: 
+        a(href='development.html') Development

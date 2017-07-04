@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Contenuti e organizzazione della directory templatedoc</title>
+<link rel="stylesheet" href="style/default.css" type="text/css">
+</head>
+
+<body>
+
+<h2>Contenuti e organizzazione della directory templatedoc 
+
+</h2>
+
+<h3>
+Sommario 
+</h3>
+
+
+<p>
+Gli schemi (<em>template</em>) raccolti in questa collezione mirano ad 
+offrire un aiuto al conseguimento di un buon grado di uniformit&agrave; 
+e completezza nella documentazione di corredo a prodotti software 
+maturi, realizzati in progetti di Architettura degli elaboratori, 
+nonostante le prevedibilmente molteplici differenze fra i prodotti. 
+<h3>
+1. Organizzazione degli schemi di documentazione 
+</h3>
+
+
+<p>
+Gli schemi sono organizzati per permettere una rapida pubblicazione 
+del software e della documentazione prodotta, sia in versioni preliminari 
+(possibilmente incomplete) che in versione finale, nello spazio web del 
+progetto sul server Galileo. Per le versioni preliminari, se si desidera 
+riservare l'accesso ai componenti del gruppo si possono usare in alternativa 
+il repository SVN e/o il Wiki del progetto sullo stesso server. 
+
+<p>
+Si prevedono due tipologie principali di progetti e, ortogonalmente, 
+due schemi di distribuzione dei relativi prodotti, il che d&agrave; luogo a 
+quattro varianti della directory radice, a partire dalla quale gli schemi 
+vanno istanziati per realizzare la documentazione essenziale sui prodotti 
+distribuiti.
+
+<p>
+Con riguardo agli schemi di distribuzione (dei contenuti, nella subdirectory 
+download), si prevedono due opzioni: 
+<ul>
+<li>
+<b>distribuzione singola</b>, cio&egrave; in un unico archivio compresso, 
+di tutti i contenuti che costituiscono il prodotto (sorgenti, 
+eseguibili, documentazione); 
+<li>
+<b>distribuzione tripla</b>, cio&egrave; in tre archivi distinti, di: 
+<ol>
+<li>
+tutto, 
+<li>
+sorgenti + documentazione, 
+<li>
+eseguibili (+ guida di utente). 
+</ol>
+
+</ul>
+
+
+<p>
+Con riguardo alle tipologie di progetti, si distingue fra: 
+<ul>
+<li>
+<b>nuovi prodotti</b>, di cui si rilascia la prima versione; 
+<li>
+<b>revisioni di prodotti</b> gi&agrave; esistenti, ovvero nuove versioni 
+di questi, per migliorarne alcune caratteristiche di qualit&agrave;. 
+</ul>
+
+
+<p>
+Naturalmente, possono sussistere progetti di tipologia o con schema 
+di distribuzione diversi da quelli qui contemplati. Si invitano gli 
+studenti ad adottare gli schemi pi&ugrave; prossimi alle proprie esigenze, 
+adattandoli a esse ma mantenendo fermo l'obiettivo di non far mancare, 
+pur se diversamente organizzata, la documentazione minima, qui 
+schematizzata attraverso varie note. 
+<blockquote>
+<b>N.B.</b> Questo &egrave; pi&ugrave; importante del rispetto della presente struttura 
+di documentazione e distribuzione: se ne pu&ograve; preferire una diversa per 
+per buoni motivi, <em>e.g.</em> mantenere la struttura di una versione precedente 
+del prodotto, ma il contenuto minimo di documentazione deve in ogni caso 
+essere reso disponibile ai destinatari del prodotto. 
+</blockquote>
+
+<p>
+La combinazione ortogonale delle due suddette opzioni d&agrave; luogo 
+alle quattro subdirectory seguenti, ciascuna delle quali pu&ograve; fungere 
+da directory radice di una istanza di questi schemi: 
+<ul>
+<li>
+singledistro/newproject10/ 
+<li>
+singledistro/revprojectvn/ 
+<li>
+tripledistro/newproject10/ 
+<li>
+tripledistro/revprojectvn/ 
+</ul>
+
+<h3>
+2. Contenuti degli schemi, convenzioni e requisiti per la loro istanziazione
+</h3>
+
+
+<p>
+Nella directory radice, prescelta fra le quattro suddette, vanno 
+istanziati i file-schema index.html e index-en.html (versione inglese 
+del precedente: <b>non</b> si richiede che la documentazione sia bilingue, 
+che comunque raramente lo sar&agrave; tutta, ma &egrave; utile che lo sia 
+almeno la 'vetrina' di presentazione del prodotto). L'istanziazione 
+&egrave; facilitata dalla seguente convenzione: 
+<blockquote>
+Stringhe di testo nello schema delimitate da una coppia di caratteri 
+<br>
+di sottolinea (&quot;_&quot;) sono <b>variabili di schema</b>, che vanno rimpiazzate 
+<br>
+(sottolinea incluse) da stringhe appropriate all'istanza.   
+</blockquote>
+
+
+<p>
+Si suggerisce di visualizzare il file-schema index.html prima di 
+procedere alla sua istanziazione, cos&igrave; ci si rende subito conto delle 
+poche modifiche da apportare. La visualizzazione pu&ograve; essere effettuata 
+con un navigatore seguendo il link relativo allo schema di interesse: 
+<ul>
+<li>
+
+<a href="singledistro/newproject10/index.html">
+singledistro/newproject10/
+</a>
+
+<li>
+
+<a href="singledistro/revprojectvn/index.html">
+singledistro/revprojectvn/
+</a>
+
+<li>
+
+<a href="tripledistro/newproject10/index.html">
+tripledistro/newproject10/
+</a>
+
+<li>
+
+<a href="tripledistro/revprojectvn/index.html">
+tripledistro/revprojectvn/
+</a>
+.
+</ul>
+
+
+<p>
+La commutazione di lingua pu&ograve; essere effettuata puntando il mouse 
+sulla bandierina in alto a destra, mentre le altre tre icone in basso 
+a destra servono alla verifica on-line della conformit&agrave; agli standard 
+HTML e CSS e alla visualizzazione delle condizioni di licenza libera 
+(GPL v. 3).
+
+<p>
+La verifica di conformit&agrave; &egrave; importante, non tanto per gli schemi 
+forniti (gi&agrave; verificata), quanto per le loro istanze, che potrebbero 
+essere non conformi per qualche disattenzione nell'editing. 
+
+<p>
+Valgono in generale (e non solo per le istanze dello schema in questione) 
+le seguenti <b>prescrizioni importanti:</b> 
+<ol>
+<li>
+Il software prodotto va rilasciato nel pubblico dominio, sorgenti inclusi, 
+alle condizioni d'uso stabilite dalla licenza libera GPL v. 3.
+<li>
+Tutti i file HTML prodotti per la documentazione devono essere conformi allo
+standard HTML del W3C, e allo standard CSS se fanno uso di fogli di stile. 
+</ol>
+
+
+<p>
+Si raccomanda pertanto, ad esempio, di evitare di produrre file HTML 
+mediante mera esportazione da programmi di editing (<em>e.g.</em> Word) noti per 
+produrre disastri rispetto al requisito di conformit&agrave; qui prescritto. 
+Gli autori di documenti HTML possono verificarne on-line la conformit&agrave; 
+allo standard anche senza averli pubblicati su web. Questo servizio &egrave; 
+disponibile all'URI: 
+<blockquote>
+
+<a href="http://validator.w3.org">
+http://validator.w3.org
+</a>
+.
+</blockquote>
+
+
+<p>
+Il servizio permette il caricamento del file HTML da verificare 
+(&quot;Validate by File Upload&quot;). Lo stesso vale per la verifica di 
+conformit&agrave; CSS, non necessaria per lo stile impiegato negli schemi 
+qui forniti, ma che pu&ograve; esserlo in caso di adozione di stili diversi. 
+L'URI di questo servizio &egrave;: 
+<blockquote>
+
+<a href="http://jigsaw.w3.org/css-validator">
+http://jigsaw.w3.org/css-validator
+</a>
+.
+</blockquote>
+
+
+<p>
+Gli altri file-schema qui forniti (oltre a icone, stili CSS ecc.), tutti 
+collocati nella subdirectory doc/ della radice prescelta, sono in formato 
+testo semplice. 
+
+<p>
+Tranne il file license.txt, che <b>non</b> va modificato, i file di testo nella 
+directory doc/ contengono linee guida relative al contenuto minimo dei 
+rispettivi tipi di documento, e in qualche caso anche a eventuali ulteriori 
+contenuti desiderabili. Non &egrave; necessario fornire tali informazioni in formato 
+testo semplice: i contenuti dei presenti schemi sono rivolti agli autori, non 
+agli utenti dei prodotti. Gli autori possono scegliere anche altri formati, 
+ma nel caso di tali scelte, e/o di diversa collocazione dei file di 
+documentazione, occorre coerentemente modificare i collegamenti locali 
+nei file index.html e index-en.html, nella directory radice prescelta. 
+
+<p>
+I formati raccomandati per i file di documentazione sono .txt, .html 
+e .pdf. Per il formato .html, valgono i requisiti di conformit&agrave; W3C 
+stabiliti sopra, mentre: 
+<blockquote>
+Per il formato .txt, va rispettata la conformit&agrave; della codifica 
+<br>
+di carattere allo standard UTF-8.  
+</blockquote>
+
+Soddisfare questo requisito mette al riparo da differenze di codifica 
+testuale che caratterizzano le pi&ugrave; comuni piattaforme, per esempio 
+rispetto a caratteri con segni diacritici (accenti ecc.), nella 
+visualizzazione del file di testo attraverso un navigatore o altro 
+programma  di lettura che riconosce UTF-8. 
+<h3>
+3. Confezione del prodotto da pubblicare e costruzione delle distribuzioni
+</h3>
+
+
+<p>
+Quando tutti i contenuti sono pronti, incluse le istanze degli schemi 
+indicati, occorre procedere alla costruzione degli archivi da inserire 
+nella subdirectory download/. Per tutti gli archivi in questione &egrave; 
+preferibile il formato di compressione .zip, il pi&ugrave; diffuso fra 
+sistemi diversi, sebbene non il pi&ugrave; efficiente quanto a rapporto 
+medio di compressione. Inoltre, la decompressione di ciascun archivio 
+dovrebbe generare un'unica cartella che contiene tutto il resto. 
+Per esempio, se in un sistema Unix &quot;radice/&quot; &egrave; la directory radice 
+dell'archivio da generare, ci&ograve; pu&ograve; ottenersi eseguendo nella 
+directory che contiene &quot;radice/&quot; il comando 
+<blockquote>
+zip -r radice.zip radice 
+</blockquote>
+
+
+<p>
+Alcune delle distribuzioni previste, e certamente quella completa, 
+prevedono l'inclusione della documentazione nella distribuzione. In 
+tal caso la radice dell'archivio dovrebbe contenere una copia esatta 
+della subdirectory doc/ con i suoi contenuti. Si raccomanda di <b>non</b> 
+usare link simbolici a tal fine: zip non li riconosce, e soprattutto 
+la documentazione in una distribuzione deve essere consultabile 
+indipendentemente dalla sua presenza in un contesto esterno, quale 
+in questo caso &egrave; la directory doc/ rispetto a download/, che contiene 
+la/e distribuzione/i del prodotto. 
+<h3>
+4.  Evoluzione di questo documento
+</h3>
+
+
+<p>
+Gli schemi qui proposti sono una seconda approssimazione, perfettibile 
+come tutte le cose umane. Commenti e suggerimenti in base all'esperienza 
+d'uso che se ne fa sono molto apprezzati, e possono essere comunicati 
+e discussi nel Forum dell'insegnamento, in risposta al post di apertura 
+del relativo topic. Eventuali nuove versioni di queste distribuzioni 
+saranno rese disponibili allo stesso modo, ovvero via download dalle 
+rispettive pagine degli schemi di documentazione di cui sopra, oltre che 
+nel 
+<a href="http://galileo.dmi.unict.it/svn/ae2017guidelines/">
+repository SVN del (meta)progetto <b>ae2017guidelines</b>
+</a>.
+
+
+<p>
+<br>
+
+<hr>
+
+<p>
+<a href="http://www.w3.org/WAI/WCAG1AAA-Conformance"><img border="0"
+       src="images/wcag1AAA-blue.png" style="margin-right: 0.3em"
+       alt="Logo di Conformit&agrave; WCAG-1 di Livello Tripla A, W3C-WAI Web Co
+ntent Accessibility Guidelines 1.0"
+       align=right height="31" width="88"></a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer"><img border="0"
+       src="images/valid-css-blue.png" style="margin-right: 0.3em"
+       alt="Valid CSS!" align=right height="31" width="88"></a>
+<a href="http://validator.w3.org/check/referer"><img border="0"
+   src="images/valid-html401-blue.png"
+   alt="Valid HTML 4.01 Transitional" align=right height="31" width="88"></a>
+</p>
+
+<blockquote>
+Data: Sabato 29 Aprile 2017
+<br>
+Autore: 
+<a href="http://www.dmi.unict.it/~scollo">
+G. Scollo
+</a>
+.
+<br>
+Versione: 0.6 
+<br>
+
+<a href="../index.html">
+Progetto linee-guida AE 2017
+</a>
+.
+<br>
+Formati di questo documento: 
+<a href="./README.txt">
+Testo semplice
+</a>,
+<a href="./README.html">
+HTML
+</a>,
+<a href="./README.pdf">
+PDF
+</a>
+.
+</blockquote>
+
+<hr>
+
+</body>
+
+</html>

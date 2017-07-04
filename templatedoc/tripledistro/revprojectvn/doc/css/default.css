@@ -1,0 +1,94 @@
+/*
+ * Style sheet for the CSS2 specification
+ */
+
+body, table, td, th, div, pre, span, p, ol,
+ul, dl, dt, dd, li, blockquote {
+  font-family: Arial, Helvetica;
+  background-color: #EEFFEE;
+}
+
+table.bordo, th.bordo, td.bordo { 
+  border: thin solid black
+}
+
+table.bordo {
+  border-collapse: collapse
+}
+
+table.navigazione, td.navigazione { 
+  border: thin solid maroon;
+  border-collapse: collapse;
+  color: white;
+  background-color: #33EE77;
+}
+
+
+td.descrizione { 
+  border: thin solid black;
+  font-style: italic;
+}
+
+
+p, li { 
+  text-align: justify;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+p.validator {
+  border-top: thin solid black;
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+p.nota {
+  text-indent: 0em;
+  font-size: x-small;
+}
+
+a.toc:link, a.toc:active, a.toc:visited  {
+  color: white;
+  background: transparent;
+}
+
+a.toc:hover {
+  color: blue;
+  background: #ffff80;
+}
+
+a:hover {
+  color: inherit;
+  background: #ffff80;
+}
+
+
+.resa {
+  border: thin solid black;
+  color: black;
+  background: #E7E7E7;
+}
+
+.codice {		
+  color: maroon;
+  font-family: monospace;
+}
+
+
+
+/*ul { 
+	margin : 0.5em 0em 0.5em 1em;
+	border-width : 0em;
+	padding : 0em; 
+}
+
+ol {margin: 0.5em 0em 0.5em 2.em; }
+*/
+
+
+@media aural {
+  H1, H2, H3 { stress: 20; richness: 90 }
+  P.copyright, P.firma { volume: x-soft; speech-rate: x-fast }
+  DT { pause-before: medium }
+  PRE { speak-punctuation: code } 
+}

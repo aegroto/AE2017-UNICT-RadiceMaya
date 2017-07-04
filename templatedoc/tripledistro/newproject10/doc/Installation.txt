@@ -1,0 +1,19 @@
+﻿Note di installazione del simulatore _Product Name_, versione 1.0 
+
+Requisiti di sistema 
+
+   Requisiti HW e SW, questi ultimi eventualmente differenziati per le 
+   tre principali piattaforme operative:  Unix/Linux, MS Windows, Mac  
+
+Compilazione e installazione  
+
+   Cosa occorre fare dopo avere spacchettato ciascuna distribuzione? 
+   Ci sono vincoli di installazione in una particolare directory? 
+   C'è qualche file di configurazione da specializzare, e/o altre azioni 
+   di configurazione (ad es., definizione di variabili di ambiente)? 
+   Per quale ambiente (HW + SW) è stato prodotto l'eseguibile?  
+
+Esecuzione 
+
+   Eventuali istruzioni per il lancio dell'esecuzione del programma 
+ 
