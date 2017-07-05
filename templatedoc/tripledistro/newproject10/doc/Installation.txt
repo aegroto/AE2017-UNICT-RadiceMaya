@@ -1,19 +1,19 @@
-﻿Note di installazione del simulatore _Product Name_, versione 1.0 
+﻿Note di installazione del Simulatore di radice quadrata in Abaco Maya, versione 1.0 
 
 Requisiti di sistema 
 
-   Requisiti HW e SW, questi ultimi eventualmente differenziati per le 
-   tre principali piattaforme operative:  Unix/Linux, MS Windows, Mac  
+    Il simulatore è sviluppato in HTML5 e Javascript, per cui qualsiasi sistema operativo e browser
+    in grado di supportare queste tecnologie è sufficiente alla sua esecuzione.
 
 Compilazione e installazione  
 
-   Cosa occorre fare dopo avere spacchettato ciascuna distribuzione? 
-   Ci sono vincoli di installazione in una particolare directory? 
-   C'è qualche file di configurazione da specializzare, e/o altre azioni 
-   di configurazione (ad es., definizione di variabili di ambiente)? 
-   Per quale ambiente (HW + SW) è stato prodotto l'eseguibile?  
+    In caso si voglia compilare il progetto, generando un pacchetto di distribuzione, è necessario
+    seguire le istruzioni contenute nel repository su GitHub del template 'generator-lb' fornito da Lighting Beetle, usato
+    per la generazione dello scheletro del progetto e il cui collegamento è riportato nella sezione
+    'Development' della pagina del simulatore e nelle note di rilascio. Non è necessaria alcuna installazione, basta collegarsi
+    all'index del sito web generato.
 
 Esecuzione 
 
-   Eventuali istruzioni per il lancio dell'esecuzione del programma 
+   Per eseguire il simulatore basta collegarsi al sito web in cui è hostato il progetto.
  

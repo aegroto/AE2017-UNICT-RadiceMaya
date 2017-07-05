@@ -1,11 +1,15 @@
-﻿Guida all'uso del simulatore _Product Name_, versione 1.0 
+﻿Guida all'uso del Simulatore di radice quadrata in Abaco Maya, versione 1.0 
 
-  Queste note vanno pensate per chi voglia usare il programma, senza 
-dover necessariamente guardare il codice per questo. Può essere utile 
-organizzare il documento per classi di funzionalità, ad es. per come 
-si raggruppano in diversi menu a discesa, entrando successivamente nel 
-dettaglio di singole voci di ciascun menu. L'informazione più astratta 
-dovrebbe esser data all'inizio: un sintetico riassunto delle funzioni 
-simulate dal software, e di eventuali diverse modalità  di simulazione 
-(ad es., automatica, passo passo, esercitazione ecc.) 
+    Il funzionamento del simulatore è estremamente semplice. Dopo l'inserimento e l'invio dell'input l'applicazione computerà in background
+    tutti i passi necessari al calcolo della radice quadrata del numero dato. Successivamente l'utente avrà la possibilità di 'navigare'
+    avanti e indietro fra i passi della procedura, dalla prima approssimazione fino al risultato. Riassumendo, le funzioni dei bottoni presenti sono:
+
+    Calcola: Elabora il numero dato in input in background. Rende disponibili i vari passi del procedimento per la visualizzazione su abaco.
+
+    Indietro: Visualizza il passo precedente. Si ferma al primo passo del procedimento.
+
+    Prossimo passo: Visualizza il passo successivo. Si ferma all'ultimo passo del procedimento, dove nell'ultima riga verrà mostrato il risultato e nella prima il resto dell'operazione.
+
+    Note di sviluppo
+    Le note di sviluppo e i potenziali miglioramenti da applicare al progetto sono discussi nella sezione 'Note di rilascio'.
 

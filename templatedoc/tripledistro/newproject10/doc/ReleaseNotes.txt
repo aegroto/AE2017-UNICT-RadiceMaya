@@ -1,33 +1,34 @@
-﻿Note di rilascio del simulatore _Product Name_, versione 1.0 
+﻿Note di rilascio del simulatore Simulatore di radice quadrata in Abaco Maya, versione 1.0 
 
-  Premessa: queste note vanno pensate per chi voglia non solo usare 
-il programma ma studiarsi il codice, magari per produrne una nuova 
-versione modificata. Il minimo contenuto di questo file sarà uno 
-schema dell'architettura del software, e l'indicazione che note 
-dettagliate sono reperibili nei commenti al codice. Se si vuole, si 
-possono anche presentare le motivazioni per le scelte implementative 
-e di tecnica di programmazione più interessanti, un sommario di 
-collaudi effettuati su una o più piattaforme, ed eventuali idee per 
-future revisioni (ad es., possibili miglioramenti non realizzati in 
-questa versione). 
+Una versione inglese e ulteriori informazioni sono contenute nella sezione 'Development'
+della pagina del simulatore.
 
-Architettura del software 
+Architettura del software e tecniche di programmazione 
 
-   organizzazione generale, classi più importanti (senza necessità di 
-   dettagli sui metodi)  
-   
-Tecniche di programmazione 
+    Il progetto usa il generatore Yeoman 'generator-lb' fornito da Lighting Beetle ed è sviluppato con tutti i relativi tools inclusi in esso.
+    Il codice HTML è astratto utilizzando PugJS.
+    L'abaco maya è renderizzato utilizzando i canvas HTML5.
+    Il codice javascript è suddiviso in moduli, ognuno con funzionalità specifiche. Essi comunicano esclusivamente
+    attraverso gli export così che valori e funzioni che dovrebbero rimanere 'private' sono inaccessibili ai
+    moduli esterni.
 
-   eventuale sommario degli aspetti più interessanti 
+    I nominativi dei moduli e le relative funzionalità sono:
+    calculus.js - Calcolo della radice quadrata e generazioni dei relativi passi per il successivo rendering.
+    canvas.js - Funzioni ausiliarie per riordinare e semplificare il codice di scrittura dei pixel sul canvas HTML5.
+    graphic_engine.js - Effettivo rendering sull'abaco dei vari passi durante il calcolo della radice quadrata
+    graphic_utils.js - Funzioni ausiliarie per graphic_engine.js
+    utils.js - Funzioni ausiliari generali
 
 Collaudi 
 
-   eventualmente differenziati per i tre principali tipi di sistemi 
-   operativi:  Unix/Linux, MS Windows, Mac
+    Un qualsiasi browser in grado di eseguire un canvas HTML5 è sufficiente a testare il programma. È 
+    consigliato il testing su più browser e dispositivi possibili oltre che un rispetto degli standard per
+    evitare problemi di portabilità.
 
 Idee per ulteriori sviluppi 
 
-   v. premessa iniziale; indicare le motivazioni di possibili modifiche 
-   ulteriori, cioè perché ci si aspetta che migliorerebbero alcune 
-   (quali?) caratteristiche di qualità del software. 
+    - Inserire una modalità esercizio, in cui l'applicazion propone un numero e l'utente deve calcolarne la radice quadrata sull'abaco. Il programma controllerà 
+    infine la validità del risultato.
+
+    - Migliorare il design e la responsabilità mobile, che per ragioni di tempo non è stata ancora totalmente collaudata.
 
